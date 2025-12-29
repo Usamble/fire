@@ -227,7 +227,7 @@ p {
   }
   
   .font-calligraphy {
-    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+    font-family: var(--font-zcool-xiaowei), var(--font-noto-serif-sc), serif;
     font-weight: 400;
     letter-spacing: 0.1em;
     color: white;

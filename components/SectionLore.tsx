@@ -1,19 +1,62 @@
 import Image from 'next/image'
 import { AnimateOnScroll } from './AnimateOnScroll'
 
+// Generate ember positions once (consistent between SSR and client)
+const generateEmberPositions = (count: number) => {
+  return Array.from({ length: count }, () => ({
+    top: Math.random() * 100,
+    left: Math.random() * 100,
+    width: Math.random() * 3 + 1,
+    height: Math.random() * 3 + 1,
+    opacity: Math.random() * 0.5 + 0.2,
+    delay: Math.random() * 2
+  }))
+}
+
+const loreEmberPositions = generateEmberPositions(20)
+
 export function SectionLore() {
   return (
     <section
       id="lore"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-red-50 relative overflow-hidden"
+      className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #fff5f5 0%, #ffe5e5 50%, #ffd5d5 100%)'
+      }}
     >
-      {/* Decorative elements */}
-      <div className="absolute bottom-20 left-20 text-7xl opacity-10">🔥</div>
+      {/* Fire horse background */}
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <Image
+          src="/4.jpg"
+          alt="Fire Horse Background"
+          fill
+          className="object-cover"
+          style={{ objectPosition: 'center' }}
+        />
+      </div>
+      
+      {/* Fire embers */}
+      <div className="absolute inset-0 overflow-hidden">
+        {loreEmberPositions.map((ember, i) => (
+          <div
+            key={i}
+            className="absolute bg-orange-400 rounded-full animate-pulse"
+            style={{
+              top: `${ember.top}%`,
+              left: `${ember.left}%`,
+              width: `${ember.width}px`,
+              height: `${ember.height}px`,
+              opacity: ember.opacity,
+              animationDelay: `${ember.delay}s`
+            }}
+          />
+        ))}
+      </div>
       
       {/* Red stylized horse in background */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none hidden md:block">
         <Image
-          src="/horse.png"
+          src="/5.jpg"
           alt="FireHorse"
           width={400}
           height={400}

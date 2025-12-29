@@ -53,12 +53,6 @@ export function Navbar() {
             >
               <span className="font-calligraphy font-bold">Token</span>
             </button>
-            <button
-              onClick={() => scrollToSection('faq')}
-              className="text-white hover:text-red-200 transition-colors px-4 py-2 rounded-lg hover:bg-red-700/50"
-            >
-              <span className="font-calligraphy font-bold">❓ FAQ</span>
-            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -120,12 +114,6 @@ export function Navbar() {
               className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50"
             >
               <span className="font-calligraphy font-bold">Token</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('faq')}
-              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50"
-            >
-              <span className="font-calligraphy font-bold">❓ FAQ</span>
             </button>
           </div>
         )}

@@ -10,10 +10,21 @@ export function SectionCycle60() {
       {/* Decorative elements */}
       <div className="absolute bottom-10 left-10 text-6xl opacity-10">🔥</div>
       
+      {/* Fire horse background */}
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <Image
+          src="/2.jpg"
+          alt="Fire Horse Background"
+          fill
+          className="object-cover"
+          style={{ objectPosition: 'center' }}
+        />
+      </div>
+      
       {/* Red stylized horse in background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none hidden lg:block">
         <Image
-          src="/horse.png"
+          src="/6.jpg"
           alt="FireHorse"
           width={500}
           height={500}
@@ -35,35 +46,36 @@ export function SectionCycle60() {
         
         <div className="grid md:grid-cols-3 gap-8 mt-12">
           <AnimateOnScroll direction="up" delay={100}>
-            <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-gray-300 transform hover:scale-105 transition-all duration-300">
+            <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-gray-300 transform hover:scale-105 transition-all duration-300 h-full flex flex-col">
             <div className="text-center mb-4">
+              <span className="text-6xl opacity-0">⚡</span>
             </div>
             <h3 className="text-4xl font-black text-gray-900 mb-4 text-center">1906</h3>
-            <p className="text-gray-800 font-bold text-lg text-center">
+            <p className="text-gray-800 font-bold text-lg text-center flex-grow">
               The first FireHorse of the modern era. The cycle begins! 🔥
             </p>
             </div>
           </AnimateOnScroll>
           
           <AnimateOnScroll direction="up" delay={200}>
-            <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-orange-400 transform hover:scale-105 transition-all duration-300">
+            <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-orange-400 transform hover:scale-105 transition-all duration-300 h-full flex flex-col">
             <div className="text-center mb-4">
               <span className="text-6xl">⚡</span>
             </div>
             <h3 className="text-4xl font-black text-gray-900 mb-4 text-center">1966</h3>
-            <p className="text-gray-800 font-bold text-lg text-center">
+            <p className="text-gray-800 font-bold text-lg text-center flex-grow">
               Cultural revolution era. FireHorse energy unleashed! 🚀
             </p>
             </div>
           </AnimateOnScroll>
           
           <AnimateOnScroll direction="up" delay={300}>
-            <div className="bg-gradient-to-br from-red-800 via-red-700 to-red-800 p-8 rounded-3xl shadow-2xl border-4 border-red-500 transform hover:scale-110 transition-all duration-300 glow-red">
+            <div className="bg-gradient-to-br from-red-800 via-red-700 to-red-800 p-8 rounded-3xl shadow-2xl border-4 border-red-500 transform hover:scale-110 transition-all duration-300 glow-red h-full flex flex-col">
             <div className="text-center mb-4">
               <span className="text-6xl">🔥</span>
             </div>
             <h3 className="text-4xl font-black text-white mb-4 text-center drop-shadow-[0_0_8px_rgba(0,0,0,0.8)]">2026</h3>
-            <p className="text-white font-black text-lg text-center drop-shadow-[0_0_6px_rgba(0,0,0,0.8)]">
+            <p className="text-white font-black text-lg text-center drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] flex-grow">
               THE NEXT CHAPTER! Be part of history! 🚀 TO THE MOON! 🌙
             </p>
             </div>

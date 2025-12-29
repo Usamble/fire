@@ -5,8 +5,8 @@ import { SectionCycle60 } from '@/components/SectionCycle60'
 import { SectionSymbolism } from '@/components/SectionSymbolism'
 import { SectionToken } from '@/components/SectionToken'
 import { SectionCTA } from '@/components/SectionCTA'
-import { FAQ } from '@/components/FAQ'
 import { Footer } from '@/components/Footer'
+import { MusicPlayer } from '@/components/MusicPlayer'
 
 export default function Home() {
   return (
@@ -18,8 +18,8 @@ export default function Home() {
       <SectionSymbolism />
       <SectionToken />
       <SectionCTA />
-      <FAQ />
       <Footer />
+      <MusicPlayer />
     </main>
   )
 }

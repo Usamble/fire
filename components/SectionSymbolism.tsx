@@ -11,10 +11,21 @@ export function SectionSymbolism() {
       <div className="absolute top-10 left-10 text-8xl opacity-10">🔥</div>
       <div className="absolute bottom-10 right-10 text-8xl opacity-10">⚡</div>
       
+      {/* Fire horse background */}
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <Image
+          src="/3.jpg"
+          alt="Fire Horse Background"
+          fill
+          className="object-cover"
+          style={{ objectPosition: 'center' }}
+        />
+      </div>
+      
       {/* Red stylized horse in background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none hidden lg:block">
         <Image
-          src="/horse.png"
+          src="/1.jpg"
           alt="FireHorse"
           width={450}
           height={450}
@@ -42,12 +53,12 @@ export function SectionSymbolism() {
         
         <div className="grid md:grid-cols-2 gap-8 mt-8">
           <AnimateOnScroll direction="right" delay={300}>
-            <div className="bg-gradient-to-br from-red-800 to-red-700 p-8 rounded-3xl shadow-2xl border-4 border-red-500 transform hover:scale-105 transition-all duration-300">
+            <div className="bg-gradient-to-br from-red-800 to-red-700 p-8 rounded-3xl shadow-2xl border-4 border-red-500 transform hover:scale-105 transition-all duration-300 h-full flex flex-col">
             <div className="text-center mb-4">
               <span className="text-7xl">🔥</span>
             </div>
             <h3 className="text-3xl font-black text-white mb-4 text-center drop-shadow-[0_0_8px_rgba(0,0,0,0.8)]">FIRE ELEMENT</h3>
-            <p className="text-white font-black text-xl text-center drop-shadow-[0_0_6px_rgba(0,0,0,0.8)]">
+            <p className="text-white font-black text-xl text-center drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] flex-grow">
               Represents <span className="text-red-200">PASSION</span>, <span className="text-red-200">TRANSFORMATION</span>, and the burning drive to succeed! 
               Fire brings <span className="text-red-200">ENERGY</span> and <span className="text-red-200">INTENSITY</span> to everything! ⚡
             </p>
@@ -55,11 +66,12 @@ export function SectionSymbolism() {
           </AnimateOnScroll>
           
           <AnimateOnScroll direction="left" delay={400}>
-            <div className="bg-gradient-to-br from-red-700 to-red-800 p-8 rounded-3xl shadow-2xl border-4 border-red-500 transform hover:scale-105 transition-all duration-300">
+            <div className="bg-gradient-to-br from-red-700 to-red-800 p-8 rounded-3xl shadow-2xl border-4 border-red-500 transform hover:scale-105 transition-all duration-300 h-full flex flex-col">
             <div className="text-center mb-4">
+              <span className="text-7xl opacity-0">🔥</span>
             </div>
             <h3 className="text-3xl font-black text-white mb-4 text-center drop-shadow-[0_0_8px_rgba(0,0,0,0.8)]">HORSE SIGN</h3>
-            <p className="text-white font-black text-xl text-center drop-shadow-[0_0_6px_rgba(0,0,0,0.8)]">
+            <p className="text-white font-black text-xl text-center drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] flex-grow">
               Symbolizes <span className="text-red-200">FREEDOM</span>, <span className="text-red-200">SPEED</span>, and unstoppable forward motion! 
               The Horse <span className="text-red-200">NEVER LOOKS BACK</span>, always charging ahead! 🚀
             </p>

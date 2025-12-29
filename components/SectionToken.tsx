@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { AnimateOnScroll } from './AnimateOnScroll'
+import { ContractAddress } from './ContractAddress'
 
 export function SectionToken() {
   return (
@@ -9,10 +10,21 @@ export function SectionToken() {
     >
       {/* Decorative elements */}
       
+      {/* Fire horse background */}
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <Image
+          src="/5.jpg"
+          alt="Fire Horse Background"
+          fill
+          className="object-cover"
+          style={{ objectPosition: 'center' }}
+        />
+      </div>
+      
       {/* Red stylized horse in background */}
       <div className="absolute left-0 bottom-1/4 opacity-15 pointer-events-none hidden md:block">
         <Image
-          src="/horse.png"
+          src="/4.jpg"
           alt="FireHorse"
           width={400}
           height={400}
@@ -35,6 +47,12 @@ export function SectionToken() {
               FireHorse 2026 represents more than just a token—it&apos;s a <span className="text-red-700">SYMBOL</span> of the cycle&apos;s return 
               and a <span className="text-orange-700">COMMUNITY</span> united by tradition and forward momentum! 🚀
             </p>
+          </div>
+        </AnimateOnScroll>
+        
+        <AnimateOnScroll direction="fade" delay={300}>
+          <div className="mb-8">
+            <ContractAddress />
           </div>
         </AnimateOnScroll>
         

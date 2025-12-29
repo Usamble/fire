@@ -4,6 +4,21 @@ import { SITE_CONFIG } from '@/lib/constants'
 import { AnimateOnScroll } from './AnimateOnScroll'
 import Image from 'next/image'
 
+// Generate ember positions once (consistent between SSR and client)
+const generateEmberPositions = (count: number) => {
+  return Array.from({ length: count }, () => ({
+    top: Math.random() * 100,
+    left: Math.random() * 100,
+    width: Math.random() * 4 + 2,
+    height: Math.random() * 4 + 2,
+    opacity: Math.random() * 0.6 + 0.3,
+    delay: Math.random() * 2,
+    shadowSize: Math.random() * 10 + 5
+  }))
+}
+
+const ctaEmberPositions = generateEmberPositions(25)
+
 export function SectionCTA() {
   const handleTelegramClick = () => {
     window.open(SITE_CONFIG.links.telegram, '_blank', 'noopener,noreferrer')
@@ -21,10 +36,41 @@ export function SectionCTA() {
         <div className="absolute bottom-10 right-10 text-8xl animate-float" style={{ animationDelay: '1.5s' }}>🌙</div>
       </div>
       
+      {/* Fire horse background */}
+      <div className="absolute inset-0 overflow-hidden opacity-15">
+        <Image
+          src="/6.jpg"
+          alt="Fire Horse Background"
+          fill
+          className="object-cover"
+          style={{ objectPosition: 'center' }}
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-r from-red-950/70 via-red-900/60 to-red-950/70"></div>
+      
+      {/* Fire embers */}
+      <div className="absolute inset-0 overflow-hidden">
+        {ctaEmberPositions.map((ember, i) => (
+          <div
+            key={i}
+            className="absolute bg-orange-400 rounded-full animate-pulse"
+            style={{
+              top: `${ember.top}%`,
+              left: `${ember.left}%`,
+              width: `${ember.width}px`,
+              height: `${ember.height}px`,
+              opacity: ember.opacity,
+              animationDelay: `${ember.delay}s`,
+              boxShadow: `0 0 ${ember.shadowSize}px rgba(255, 107, 53, 0.8)`
+            }}
+          />
+        ))}
+      </div>
+      
       {/* Red stylized horse in background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none hidden lg:block">
         <Image
-          src="/horse.png"
+          src="/2.jpg"
           alt="FireHorse"
           width={500}
           height={500}

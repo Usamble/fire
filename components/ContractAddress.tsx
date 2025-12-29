@@ -23,25 +23,38 @@ export function ContractAddress() {
   }
 
   const getDexScreenerUrl = (address: string) => {
-    // DexScreener URL for Ethereum/EVM chains
+    // DexScreener URL for BSC (Binance Smart Chain)
     if (address.startsWith('0x')) {
-      return `https://dexscreener.com/ethereum/${address}`
+      return `https://dexscreener.com/bsc/${address}`
     }
     return `#`
   }
 
   return (
-    <div className="bg-red-900/80 backdrop-blur-sm rounded-xl p-5 border-3 border-red-500 shadow-xl max-w-2xl mx-auto">
-      <p className="text-sm text-red-200 font-bold mb-3 text-center">Contract Address</p>
+    <div className="backdrop-blur-sm rounded-xl p-5 shadow-xl max-w-2xl mx-auto border-4" style={{
+      background: 'rgba(139, 0, 0, 0.9)',
+      borderColor: '#DAA520'
+    }}>
+      <p className="text-sm font-bold mb-3 text-center" style={{ color: '#FFD700' }}>Contract Address</p>
       
       <div 
         onClick={handleCopy}
-        className="bg-red-950/80 rounded-lg p-4 mb-4 cursor-pointer hover:bg-red-950 transition-colors border-2 border-red-600 hover:border-red-400 group"
+        className="rounded-lg p-4 mb-4 cursor-pointer transition-colors border-2 group"
+        style={{
+          background: 'rgba(107, 0, 0, 0.8)',
+          borderColor: '#8B0000'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = '#DAA520'
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = '#8B0000'
+        }}
       >
         <p className="text-base sm:text-lg text-white font-mono font-bold text-center break-all select-all">
           {contractAddress}
         </p>
-        <p className="text-xs text-red-300 text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <p className="text-xs text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#FFD700' }}>
           Click anywhere to copy
         </p>
       </div>
@@ -49,11 +62,15 @@ export function ContractAddress() {
       <div className="flex gap-3 justify-center">
         <button
           onClick={handleCopy}
-          className={`px-6 py-3 text-white text-base font-bold rounded-lg transition-all border-2 ${
+          className={`px-6 py-3 text-white text-base font-bold rounded-lg transition-all border-2 hover:scale-105 ${
             copied 
               ? 'bg-green-600 border-green-500 hover:bg-green-700' 
-              : 'bg-red-700 hover:bg-red-600 border-red-500 hover:scale-105'
+              : ''
           }`}
+          style={copied ? {} : {
+            background: 'linear-gradient(135deg, #8B0000 0%, #A52A2A 50%, #DC143C 100%)',
+            borderColor: '#DAA520'
+          }}
           title="Copy address"
         >
           {copied ? '✓ Copied!' : '📋 Copy Address'}
@@ -62,7 +79,11 @@ export function ContractAddress() {
           href={getDexScreenerUrl(contractAddress)}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 bg-red-800 hover:bg-red-700 text-white text-base font-bold rounded-lg transition-all border-2 border-red-500 hover:scale-105"
+          className="px-6 py-3 text-white text-base font-bold rounded-lg transition-all border-2 hover:scale-105"
+          style={{
+            background: 'linear-gradient(135deg, #8B0000 0%, #A52A2A 50%, #DC143C 100%)',
+            borderColor: '#DAA520'
+          }}
           title="View on DexScreener"
         >
           📊 View on DexScreener

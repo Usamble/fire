@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
+import { SITE_CONFIG } from '@/lib/constants'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,7 +16,10 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-red-900 via-red-800 to-red-900 backdrop-blur-md border-b-4 border-red-600 shadow-2xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b-4 shadow-2xl" style={{
+      background: 'linear-gradient(135deg, #6B0000 0%, #8B0000 25%, #A52A2A 50%, #8B0000 75%, #6B0000 100%)',
+      borderColor: '#8B0000'
+    }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0">
@@ -30,28 +34,28 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:space-x-6">
             <button
-              onClick={() => scrollToSection('lore')}
-              className="text-white hover:text-red-200 transition-colors px-4 py-2 rounded-lg hover:bg-red-700/50"
+              onClick={() => {
+                window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
+              }}
+              className="text-white hover:text-red-200 transition-colors px-4 py-2 font-bold"
             >
-              <span className="font-calligraphy font-bold">📖 Lore</span>
+              TWITTER
             </button>
             <button
-              onClick={() => scrollToSection('cycle')}
-              className="text-white hover:text-red-200 transition-colors px-4 py-2 rounded-lg hover:bg-red-700/50"
+              onClick={() => {
+                window.open(`https://dexscreener.com/bsc/${SITE_CONFIG.contractAddress}`, '_blank', 'noopener,noreferrer')
+              }}
+              className="text-white hover:text-red-200 transition-colors px-4 py-2 font-bold"
             >
-              <span className="font-calligraphy font-bold">⚡ 60-Year Cycle</span>
+              CHART
             </button>
             <button
-              onClick={() => scrollToSection('symbolism')}
-              className="text-white hover:text-red-200 transition-colors px-4 py-2 rounded-lg hover:bg-red-700/50"
+              onClick={() => {
+                window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
+              }}
+              className="text-white hover:text-red-200 transition-colors px-4 py-2 font-bold"
             >
-              <span className="font-calligraphy font-bold">🔮 Symbolism</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('token')}
-              className="text-white hover:text-red-200 transition-colors px-4 py-2 rounded-lg hover:bg-red-700/50"
-            >
-              <span className="font-calligraphy font-bold">Token</span>
+              X COMMUNITY
             </button>
           </div>
 
@@ -92,28 +96,31 @@ export function Navbar() {
         {isOpen && (
           <div className="md:hidden pb-4 space-y-2 bg-red-900/95 rounded-lg mt-2 p-4">
             <button
-              onClick={() => scrollToSection('lore')}
-              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50"
+              onClick={() => {
+                window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
+                setIsOpen(false)
+              }}
+              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50 font-bold"
             >
-              <span className="font-calligraphy font-bold">📖 Lore</span>
+              TWITTER
             </button>
             <button
-              onClick={() => scrollToSection('cycle')}
-              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50"
+              onClick={() => {
+                window.open(`https://dexscreener.com/bsc/${SITE_CONFIG.contractAddress}`, '_blank', 'noopener,noreferrer')
+                setIsOpen(false)
+              }}
+              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50 font-bold"
             >
-              <span className="font-calligraphy font-bold">⚡ 60-Year Cycle</span>
+              CHART
             </button>
             <button
-              onClick={() => scrollToSection('symbolism')}
-              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50"
+              onClick={() => {
+                window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
+                setIsOpen(false)
+              }}
+              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50 font-bold"
             >
-              <span className="font-calligraphy font-bold">🔮 Symbolism</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('token')}
-              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50"
-            >
-              <span className="font-calligraphy font-bold">Token</span>
+              X COMMUNITY
             </button>
           </div>
         )}

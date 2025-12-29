@@ -16,7 +16,7 @@ export function SectionAbout() {
   return (
     <section
       id="about"
-      className="relative py-20 px-4 sm:px-6 lg:px-8"
+      className="relative py-12 sm:py-16 lg:py-20 px-3 sm:px-6 lg:px-8"
       style={{
         background: 'linear-gradient(135deg, #F5E6D3 0%, #E8D5B7 25%, #D4C4A8 50%, #E8D5B7 75%, #F5E6D3 100%)'
       }}
@@ -49,8 +49,8 @@ export function SectionAbout() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-5xl sm:text-6xl font-black mb-4 uppercase tracking-wider" style={{ 
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-3 sm:mb-4 uppercase tracking-wider px-2" style={{ 
             color: '#8B0000',
             fontFamily: 'system-ui, -apple-system, sans-serif',
             fontWeight: 900,
@@ -61,34 +61,34 @@ export function SectionAbout() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left side - Text content */}
           <div className="order-2 lg:order-1">
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border-4" style={{ borderColor: '#8B0000' }}>
-              <p className="text-lg sm:text-xl leading-relaxed mb-4" style={{ color: '#3C2414' }}>
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl border-4" style={{ borderColor: '#8B0000' }}>
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-3 sm:mb-4" style={{ color: '#3C2414' }}>
                 Fire and fury, the Horse is here! 🔥
               </p>
-              <p className="text-lg sm:text-xl leading-relaxed mb-4" style={{ color: '#3C2414' }}>
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-3 sm:mb-4" style={{ color: '#3C2414' }}>
                 Burning passion, unstoppable motion, and power in every stride.
               </p>
-              <p className="text-lg sm:text-xl leading-relaxed mb-4" style={{ color: '#3C2414' }}>
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-3 sm:mb-4" style={{ color: '#3C2414' }}>
                 From ancient cycles to modern times, FireHorse charges with style.
               </p>
-              <p className="text-lg sm:text-xl leading-relaxed mb-6" style={{ color: '#3C2414' }}>
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-4 sm:mb-6" style={{ color: '#3C2414' }}>
                 Join the ride, let the fire ignite —<br />
                 Because when FireHorse runs, there&apos;s no stopping the might! 🚀
               </p>
 
               {/* Contract Address */}
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <ContractAddress />
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={handleTelegramClick}
-                  className="px-8 py-4 text-white font-black text-lg rounded-xl transition-all duration-300 shadow-xl hover:scale-105 transform border-4"
+                  className="px-6 sm:px-8 py-3 sm:py-4 text-white font-black text-base sm:text-lg rounded-xl transition-all duration-300 shadow-xl hover:scale-105 transform border-4"
                   style={{
                     background: 'linear-gradient(135deg, #8B0000 0%, #A52A2A 50%, #DC143C 100%)',
                     borderColor: '#6B0000'
@@ -98,7 +98,7 @@ export function SectionAbout() {
                 </button>
                 <button
                   onClick={handleTwitterClick}
-                  className="px-8 py-4 bg-white hover:bg-gray-50 font-black text-lg rounded-xl transition-all duration-300 shadow-xl hover:scale-105 transform border-4"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 font-black text-base sm:text-lg rounded-xl transition-all duration-300 shadow-xl hover:scale-105 transform border-4"
                   style={{
                     color: '#8B0000',
                     borderColor: '#8B0000'
@@ -112,13 +112,13 @@ export function SectionAbout() {
 
           {/* Right side - Horse graphics */}
           <div className="order-1 lg:order-2 relative">
-            <div className="relative">
+            <div className="relative max-w-[300px] sm:max-w-md lg:max-w-lg mx-auto lg:mx-0">
               <Image
                 src="/3.jpg"
                 alt="Fire Horse"
                 width={600}
                 height={600}
-                className="object-contain drop-shadow-2xl"
+                className="object-contain drop-shadow-2xl w-full h-auto"
               />
             </div>
             

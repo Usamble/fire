@@ -88,7 +88,7 @@ export function SectionAbout() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={handleTelegramClick}
-                  className="px-6 sm:px-8 py-3 sm:py-4 text-white font-black text-base sm:text-lg rounded-xl transition-all duration-300 shadow-xl hover:scale-105 transform border-4"
+                  className="px-6 sm:px-8 py-3 sm:py-4 text-white font-black text-base sm:text-lg rounded-xl transition-all duration-300 shadow-xl hover:scale-105 transform border-4 flex items-center justify-center"
                   style={{
                     background: 'linear-gradient(135deg, #8B0000 0%, #A52A2A 50%, #DC143C 100%)',
                     borderColor: '#6B0000'
@@ -98,7 +98,7 @@ export function SectionAbout() {
                 </button>
                 <button
                   onClick={handleTwitterClick}
-                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 font-black text-base sm:text-lg rounded-xl transition-all duration-300 shadow-xl hover:scale-105 transform border-4"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 font-black text-base sm:text-lg rounded-xl transition-all duration-300 shadow-xl hover:scale-105 transform border-4 flex items-center justify-center"
                   style={{
                     color: '#8B0000',
                     borderColor: '#8B0000'

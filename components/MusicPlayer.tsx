@@ -20,12 +20,12 @@ export function MusicPlayer() {
         await audio.play()
         hasStarted = true
         
-        // Unmute after it starts
-        setTimeout(() => {
+        // Unmute immediately after it starts
+        requestAnimationFrame(() => {
           if (audio) {
             audio.muted = false
           }
-        }, 500)
+        })
       } catch (error) {
         // If muted fails, try unmuted
         try {
@@ -51,40 +51,29 @@ export function MusicPlayer() {
       }
     }
 
-    // Try when audio can play
+    // Try when audio can play - immediate
     const handleCanPlay = () => {
       if (!hasStarted) {
         playAudio()
       }
     }
 
-    audio.addEventListener('canplay', handleCanPlay)
-    audio.addEventListener('canplaythrough', handleCanPlay)
-    audio.addEventListener('loadeddata', handleCanPlay)
+    audio.addEventListener('canplay', handleCanPlay, { once: true })
+    audio.addEventListener('canplaythrough', handleCanPlay, { once: true })
+    audio.addEventListener('loadeddata', handleCanPlay, { once: true })
     
-    // Try immediately - multiple attempts
-    const timer1 = setTimeout(() => playAudio(), 50)
-    const timer2 = setTimeout(() => playAudio(), 200)
-    const timer3 = setTimeout(() => playAudio(), 500)
-    const timer4 = setTimeout(() => playAudio(), 1000)
-    const timer5 = setTimeout(() => playAudio(), 2000)
+    // Try immediately - no delays
+    playAudio()
     
     // Try on window load
-    window.addEventListener('load', playAudio)
-    
-    // Try on DOM ready
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    if (document.readyState === 'complete') {
       playAudio()
     } else {
-      document.addEventListener('DOMContentLoaded', playAudio)
+      window.addEventListener('load', playAudio, { once: true })
+      document.addEventListener('DOMContentLoaded', playAudio, { once: true })
     }
 
     return () => {
-      clearTimeout(timer1)
-      clearTimeout(timer2)
-      clearTimeout(timer3)
-      clearTimeout(timer4)
-      clearTimeout(timer5)
       audio.removeEventListener('canplay', handleCanPlay)
       audio.removeEventListener('canplaythrough', handleCanPlay)
       audio.removeEventListener('loadeddata', handleCanPlay)
@@ -101,15 +90,19 @@ export function MusicPlayer() {
       preload="auto"
       playsInline
       onLoadedData={() => {
-        // Try to play when data is loaded
+        // Try to play immediately when data is loaded
+        if (audioRef.current && !audioRef.current.paused) {
+          return // Already playing
+        }
         if (audioRef.current) {
           audioRef.current.muted = true
           audioRef.current.play().then(() => {
-            setTimeout(() => {
+            // Unmute immediately
+            requestAnimationFrame(() => {
               if (audioRef.current) {
                 audioRef.current.muted = false
               }
-            }, 500)
+            })
           }).catch(() => {})
         }
       }}

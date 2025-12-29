@@ -26,7 +26,6 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
         <meta name="theme-color" content="#991b1b" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
       </head>
       <body className="antialiased">
         {children}

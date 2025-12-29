@@ -20,24 +20,24 @@ export function Navbar() {
       background: 'linear-gradient(135deg, #6B0000 0%, #8B0000 25%, #A52A2A 50%, #8B0000 75%, #6B0000 100%)',
       borderColor: '#8B0000'
     }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('hero')}
               className="hover:opacity-80 transition-opacity"
             >
-              <span className="text-2xl sm:text-3xl font-calligraphy">FIREHORSE</span>
+              <span className="text-lg sm:text-2xl lg:text-3xl font-calligraphy">FIREHORSE</span>
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:space-x-6">
+          <div className="hidden md:flex md:space-x-4 lg:space-x-6">
             <button
               onClick={() => {
                 window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
               }}
-              className="text-white hover:text-red-200 transition-colors px-4 py-2 font-bold"
+              className="text-white hover:text-red-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
             >
               TWITTER
             </button>
@@ -45,7 +45,7 @@ export function Navbar() {
               onClick={() => {
                 window.open(`https://dexscreener.com/bsc/${SITE_CONFIG.contractAddress}`, '_blank', 'noopener,noreferrer')
               }}
-              className="text-white hover:text-red-200 transition-colors px-4 py-2 font-bold"
+              className="text-white hover:text-red-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
             >
               CHART
             </button>
@@ -53,7 +53,7 @@ export function Navbar() {
               onClick={() => {
                 window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
               }}
-              className="text-white hover:text-red-200 transition-colors px-4 py-2 font-bold"
+              className="text-white hover:text-red-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
             >
               X COMMUNITY
             </button>

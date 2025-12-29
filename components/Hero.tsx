@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { SITE_CONFIG } from '@/lib/constants'
 import { AnimateOnScroll } from './AnimateOnScroll'
 import { ContractAddress } from './ContractAddress'
@@ -19,9 +20,21 @@ const generateEmberPositions = (count: number) => {
   }))
 }
 
+// Generate fewer embers - will be filtered on mobile in component
 const heroEmberPositions = generateEmberPositions(30)
 
 export function Hero() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   const handleTelegramClick = () => {
     window.open(SITE_CONFIG.links.telegram, '_blank', 'noopener,noreferrer')
   }
@@ -38,7 +51,7 @@ export function Hero() {
         background: 'linear-gradient(135deg, #8B0000 0%, #A52A2A 25%, #DC143C 50%, #8B0000 75%, #6B0000 100%)'
       }}
     >
-      {/* Fire horse background images */}
+      {/* Fire horse background images - lazy load on mobile */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
@@ -47,6 +60,8 @@ export function Hero() {
             fill
             className="object-cover"
             priority
+            loading="eager"
+            quality={75}
             style={{ objectPosition: 'center' }}
           />
         </div>
@@ -72,13 +87,14 @@ export function Hero() {
           width={500}
           height={500}
           className="object-contain"
-          priority
+          loading="lazy"
+          quality={75}
         />
       </div>
       
-      {/* Ancient Chinese beige/cream clouds background */}
+      {/* Ancient Chinese beige/cream clouds background - fewer on mobile */}
       <div className="absolute inset-0 overflow-hidden opacity-25">
-        {Array.from({ length: 15 }).map((_, i) => (
+        {Array.from({ length: 15 }).slice(0, isMobile ? 8 : 15).map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full"
@@ -94,9 +110,9 @@ export function Hero() {
         ))}
       </div>
       
-      {/* Fire embers/sparks */}
+      {/* Fire embers/sparks - fewer on mobile for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        {heroEmberPositions.map((ember, i) => (
+        {heroEmberPositions.slice(0, isMobile ? 15 : 30).map((ember, i) => (
           <div
             key={i}
             className="absolute bg-orange-400 rounded-full animate-pulse"
@@ -139,6 +155,8 @@ export function Hero() {
                     height={800}
                     className="object-contain drop-shadow-[0_0_50px_rgba(218,165,32,0.9)] w-full h-auto"
                     priority
+                    quality={85}
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 400px, 600px"
                     style={{
                       filter: 'drop-shadow(0 0 30px rgba(255, 215, 0, 0.7)) drop-shadow(0 0 60px rgba(255, 140, 0, 0.5))'
                     }}

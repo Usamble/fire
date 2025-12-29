@@ -1,8 +1,19 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export function SectionTokenomics() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   return (
     <section
       id="tokenomics"
@@ -19,9 +30,9 @@ export function SectionTokenomics() {
         background: 'linear-gradient(90deg, transparent 0%, rgba(139, 0, 0, 0.3) 20%, rgba(218, 165, 32, 0.4) 50%, rgba(139, 0, 0, 0.3) 80%, transparent 100%)'
       }}></div>
 
-      {/* Ancient Chinese clouds background */}
+      {/* Ancient Chinese clouds background - fewer on mobile */}
       <div className="absolute inset-0 overflow-hidden opacity-15">
-        {Array.from({ length: 8 }).map((_, i) => (
+        {Array.from({ length: 8 }).slice(0, isMobile ? 4 : 8).map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full"
@@ -61,6 +72,9 @@ export function SectionTokenomics() {
                 width={500}
                 height={500}
                 className="object-contain drop-shadow-2xl w-full h-auto"
+                loading="lazy"
+                quality={75}
+                sizes="(max-width: 640px) 280px, (max-width: 1024px) 400px, 500px"
               />
             </div>
           </div>

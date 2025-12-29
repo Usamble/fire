@@ -1,9 +1,20 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/constants'
 
 export function SectionHowToBuy() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   return (
     <section
       id="howtobuy"
@@ -12,9 +23,9 @@ export function SectionHowToBuy() {
         background: 'linear-gradient(135deg, #8B0000 0%, #A52A2A 25%, #DC143C 50%, #8B0000 75%, #6B0000 100%)'
       }}
     >
-      {/* Ancient Chinese clouds background */}
+      {/* Ancient Chinese clouds background - fewer on mobile */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
-        {Array.from({ length: 10 }).map((_, i) => (
+        {Array.from({ length: 10 }).slice(0, isMobile ? 5 : 10).map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full"
@@ -109,6 +120,9 @@ export function SectionHowToBuy() {
                 width={600}
                 height={600}
                 className="object-contain drop-shadow-2xl w-full h-auto"
+                loading="lazy"
+                quality={75}
+                sizes="(max-width: 640px) 280px, (max-width: 1024px) 400px, 600px"
               />
             </div>
           </div>

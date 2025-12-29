@@ -20,6 +20,9 @@ export function AnimateOnScroll({
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const currentRef = ref.current
+    if (!currentRef) return
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -31,14 +34,10 @@ export function AnimateOnScroll({
       { threshold: 0.1 }
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
+    observer.observe(currentRef)
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
-      }
+      observer.unobserve(currentRef)
     }
   }, [delay])
 

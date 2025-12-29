@@ -76,7 +76,7 @@ export function SectionCycle60() {
             <p className="text-2xl sm:text-3xl font-black text-gray-900">
               ⏰ Next FireHorse: <span className="text-red-700">2086</span>
             </p>
-            <p className="text-base text-gray-700 mt-2 font-bold">Don't miss this rare 60-year opportunity!            </p>
+            <p className="text-base text-gray-700 mt-2 font-bold">Don&apos;t miss this rare 60-year opportunity!</p>
             </div>
           </AnimateOnScroll>
         </div>

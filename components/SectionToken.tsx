@@ -32,7 +32,7 @@ export function SectionToken() {
         <AnimateOnScroll direction="up" delay={200}>
           <div className="bg-white p-10 rounded-3xl shadow-2xl border-4 border-red-600 mb-8">
             <p className="text-2xl sm:text-3xl text-gray-900 mb-6 font-black text-center leading-relaxed">
-              FireHorse 2026 represents more than just a token—it's a <span className="text-red-700">SYMBOL</span> of the cycle's return 
+              FireHorse 2026 represents more than just a token—it&apos;s a <span className="text-red-700">SYMBOL</span> of the cycle&apos;s return 
               and a <span className="text-orange-700">COMMUNITY</span> united by tradition and forward momentum! 🚀
             </p>
           </div>

@@ -79,14 +79,14 @@ export function ContractAddress() {
           href={getDexScreenerUrl(contractAddress)}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-4 sm:px-6 py-2 sm:py-3 text-white text-sm sm:text-base font-bold rounded-lg transition-all border-2 hover:scale-105"
+          className="px-4 sm:px-6 py-2 sm:py-3 text-white text-sm sm:text-base font-bold rounded-lg transition-all border-2 hover:scale-105 flex items-center justify-center"
           style={{
             background: 'linear-gradient(135deg, #8B0000 0%, #A52A2A 50%, #DC143C 100%)',
             borderColor: '#DAA520'
           }}
           title="View on DexScreener"
         >
-          📊 View on DexScreener
+          <span className="text-center">📊 View on DexScreener</span>
         </a>
       </div>
     </div>

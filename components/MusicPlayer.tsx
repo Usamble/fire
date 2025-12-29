@@ -72,7 +72,7 @@ export function MusicPlayer() {
         loop
         muted
         autoPlay
-        preload="auto"
+        preload="metadata"
         playsInline
         onLoadedData={() => {
           start().catch(() => {})

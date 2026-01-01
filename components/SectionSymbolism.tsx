@@ -14,7 +14,7 @@ export function SectionSymbolism() {
       {/* Fire horse background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <Image
-          src="/3.jpg"
+          src="/cartoon-3.jpg"
           alt="Fire Horse Background"
           fill
           className="object-cover"
@@ -25,7 +25,7 @@ export function SectionSymbolism() {
       {/* Red stylized horse in background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none hidden lg:block">
         <Image
-          src="/1.jpg"
+          src="/cartoon-1.jpg"
           alt="FireHorse"
           width={450}
           height={450}

@@ -10,9 +10,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-manrope), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 500;
@@ -243,21 +241,10 @@ p {
       transform: scale(1.05);
     }
   }
-  
-  .font-calligraphy {
-    font-family: var(--font-zcool-xiaowei), var(--font-noto-serif-sc), serif;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    color: white;
-    text-shadow: 
-      3px 3px 0px rgba(0, 0, 0, 0.8),
-      2px 2px 4px rgba(0, 0, 0, 0.6),
-      0 0 10px rgba(0, 0, 0, 0.5);
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
-    /* Better rendering across browsers */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+
+  .font-headline {
+    font-family: var(--font-bungee), var(--font-manrope), 'Impact', sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 }
-

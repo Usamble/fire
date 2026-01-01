@@ -13,7 +13,7 @@ export function SectionCycle60() {
       {/* Fire horse background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <Image
-          src="/2.jpg"
+          src="/cartoon-2.jpg"
           alt="Fire Horse Background"
           fill
           className="object-cover"
@@ -24,7 +24,7 @@ export function SectionCycle60() {
       {/* Red stylized horse in background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none hidden lg:block">
         <Image
-          src="/6.jpg"
+          src="/cartoon-6.jpg"
           alt="FireHorse"
           width={500}
           height={500}

@@ -20,9 +20,38 @@ export function SectionHowToBuy() {
       id="howtobuy"
       className="relative py-12 sm:py-16 lg:py-20 px-3 sm:px-6 lg:px-8"
       style={{
-        background: 'linear-gradient(135deg, #8B0000 0%, #A52A2A 25%, #DC143C 50%, #8B0000 75%, #6B0000 100%)'
+        background:
+          'radial-gradient(circle at 16% 12%, rgba(255, 222, 138, 0.35) 0, transparent 28%), radial-gradient(circle at 80% 12%, rgba(255, 200, 100, 0.3) 0, transparent 25%), linear-gradient(135deg, #ff6b6b 0%, #ef4444 40%, #c81e1e 80%, #7f1d1d 100%)'
       }}
     >
+      {/* Halftone vibe */}
+      <div
+        className="absolute inset-0 opacity-40 pointer-events-none"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 14px 14px, rgba(255, 241, 196, 0.2) 7px, transparent 0), radial-gradient(circle at 40px 40px, rgba(255, 241, 196, 0.18) 7px, transparent 0)',
+          backgroundSize: '160px 160px'
+        }}
+      ></div>
+      {/* Sticker horses for extra cartoon energy */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <Image
+          src="/cartoon-standing.png"
+          alt="Standing firehorse"
+          width={340}
+          height={340}
+          className="absolute -left-10 bottom-0 rotate-3 opacity-75 drop-shadow-[0_30px_35px_rgba(0,0,0,0.3)] hidden lg:block"
+          quality={85}
+        />
+        <Image
+          src="/cartoon-falling.png"
+          alt="Badge"
+          width={150}
+          height={150}
+          className="absolute right-6 top-6 -rotate-6 opacity-80 drop-shadow-[0_18px_20px_rgba(0,0,0,0.2)] hidden sm:block"
+          quality={85}
+        />
+      </div>
       {/* Ancient Chinese clouds background - fewer on mobile */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         {Array.from({ length: 10 }).slice(0, isMobile ? 5 : 10).map((_, i) => (
@@ -44,12 +73,9 @@ export function SectionHowToBuy() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-3 sm:mb-4 text-white uppercase tracking-wider px-2" style={{
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontWeight: 900,
-            letterSpacing: '0.1em',
-            textShadow: '2px 2px 0px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.8)'
-          }}>
+          <h2
+            className="font-headline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-3 sm:mb-4 text-white px-2 drop-shadow-[0_12px_28px_rgba(0,0,0,0.45)]"
+          >
             HOW TO BUY?
           </h2>
         </div>
@@ -113,16 +139,36 @@ export function SectionHowToBuy() {
 
           {/* Right side - Horse graphic */}
           <div className="order-1 lg:order-2">
-            <div className="relative max-w-[280px] sm:max-w-md lg:max-w-lg mx-auto lg:mx-0">
+              <div className="relative max-w-[320px] sm:max-w-md lg:max-w-lg mx-auto lg:mx-0">
+              <div className="absolute -left-10 -top-8 hidden sm:block">
+                <Image
+                  src="/cartoon-standing.png"
+                  alt="Badge"
+                  width={130}
+                  height={130}
+                  className="rotate-6 drop-shadow-[0_14px_18px_rgba(0,0,0,0.2)]"
+                  quality={85}
+                />
+              </div>
+              <div className="absolute -right-8 bottom-6 hidden lg:block">
+                <Image
+                  src="/cartoon-falling.png"
+                  alt="Flying horse"
+                  width={210}
+                  height={210}
+                  className="-rotate-6 opacity-80 drop-shadow-[0_24px_28px_rgba(0,0,0,0.22)]"
+                  quality={85}
+                />
+              </div>
               <Image
-                src="/5.jpg"
+                src="/car.jpg"
                 alt="Fire Horse"
                 width={600}
                 height={600}
-                className="object-contain drop-shadow-2xl w-full h-auto"
+                className="object-contain drop-shadow-[0_0_45px_rgba(255,199,102,0.5)] w-full h-auto"
                 loading="lazy"
-                quality={75}
-                sizes="(max-width: 640px) 280px, (max-width: 1024px) 400px, 600px"
+                quality={85}
+                sizes="(max-width: 640px) 320px, (max-width: 1024px) 420px, 620px"
               />
             </div>
           </div>
@@ -131,4 +177,3 @@ export function SectionHowToBuy() {
     </section>
   )
 }
-

@@ -99,12 +99,12 @@ export function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 py-0">
-        <div className="flex flex-col items-center gap-0 text-center">
+        <div className="flex flex-col items-center gap-2 sm:gap-3 text-center">
           <AnimateOnScroll direction="up" delay={100}>
             <div className="relative flex justify-center">
               <div className="absolute -left-8 -top-8 w-48 h-48 bg-amber-200/30 blur-3xl" />
               <div className="absolute -right-8 bottom-0 w-56 h-56 bg-rose-300/25 blur-3xl" />
-              <div className="relative w-full max-w-[600px] sm:max-w-[700px]">
+              <div className="relative w-full max-w-[800px] sm:max-w-[900px] lg:max-w-[1000px]">
                 <Image
                   src="/cartoon-standing.png"
                   alt="Hero FireHorse"
@@ -113,19 +113,22 @@ export function Hero() {
                   className="object-contain drop-shadow-[0_0_65px_rgba(255,214,102,0.65)] w-full h-auto"
                   priority
                   quality={90}
-                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 500px, 600px"
+                  sizes="(max-width: 640px) 400px, (max-width: 1024px) 700px, 1000px"
                 />
+                {/* Text overlay na spodnej časti obrázka */}
+                <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center">
+                  <h1
+                    className="font-headline text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white"
+                    style={{ 
+                      textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)',
+                      WebkitTextStroke: '1px rgba(0,0,0,0.3)'
+                    }}
+                  >
+                    FireHorse
+                  </h1>
+                </div>
               </div>
             </div>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll direction="up" delay={200}>
-            <h1
-              className="font-headline text-3xl sm:text-4xl lg:text-5xl leading-tight text-white mt-1"
-              style={{ textShadow: '0 12px 28px rgba(0,0,0,0.35)' }}
-            >
-              FireHorse
-            </h1>
           </AnimateOnScroll>
         </div>
       </div>

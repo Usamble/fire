@@ -62,9 +62,7 @@ export function Navbar() {
               Community
             </button>
             <button
-              onClick={() => {
-                window.open(SITE_CONFIG.links.telegram, '_blank', 'noopener,noreferrer')
-              }}
+              onClick={() => scrollToSection('about')}
               className="px-4 py-2 rounded-xl font-bold text-sm lg:text-base text-slate-900 bg-amber-300 shadow-lg hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all duration-200"
             >
               Buy $FIREHORSE
@@ -145,7 +143,7 @@ export function Navbar() {
             </button>
             <button
               onClick={() => {
-                window.open(SITE_CONFIG.links.telegram, '_blank', 'noopener,noreferrer')
+                scrollToSection('about')
                 setIsOpen(false)
               }}
               className="block w-full text-left px-4 py-3 text-slate-900 bg-amber-300 rounded-lg font-bold hover:brightness-110 transition-all"

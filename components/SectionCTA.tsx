@@ -39,7 +39,7 @@ export function SectionCTA() {
       {/* Fire horse background */}
       <div className="absolute inset-0 overflow-hidden opacity-15">
         <Image
-          src="/6.jpg"
+          src="/cartoon-6.jpg"
           alt="Fire Horse Background"
           fill
           className="object-cover"
@@ -70,7 +70,7 @@ export function SectionCTA() {
       {/* Red stylized horse in background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none hidden lg:block">
         <Image
-          src="/2.jpg"
+          src="/cartoon-2.jpg"
           alt="FireHorse"
           width={500}
           height={500}

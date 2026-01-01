@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { cn } from '@/lib/utils'
 import { SITE_CONFIG } from '@/lib/constants'
 
 export function Navbar() {
@@ -16,10 +15,13 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b-4 shadow-2xl" style={{
-      background: 'linear-gradient(135deg, #6B0000 0%, #8B0000 25%, #A52A2A 50%, #8B0000 75%, #6B0000 100%)',
-      borderColor: '#8B0000'
-    }}>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b-4 shadow-2xl"
+      style={{
+        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #7f1d1d 90%)',
+        borderColor: '#fbbf24'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           <div className="flex-shrink-0">
@@ -27,35 +29,45 @@ export function Navbar() {
               onClick={() => scrollToSection('hero')}
               className="hover:opacity-80 transition-opacity"
             >
-              <span className="text-lg sm:text-2xl lg:text-3xl font-calligraphy">FIREHORSE</span>
+              <span className="text-lg sm:text-2xl lg:text-3xl font-headline text-amber-200 drop-shadow-[0_3px_8px_rgba(0,0,0,0.35)]">
+                Firehorse
+              </span>
             </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:space-x-4 lg:space-x-6">
             <button
-              onClick={() => {
-                window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
-              }}
-              className="text-white hover:text-red-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
+              onClick={() => scrollToSection('about')}
+              className="text-white hover:text-amber-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
             >
-              TWITTER
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection('tokenomics')}
+              className="text-white hover:text-amber-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
+            >
+              Tokenomics
+            </button>
+            <button
+              onClick={() => scrollToSection('howtobuy')}
+              className="text-white hover:text-amber-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
+            >
+              How to buy
+            </button>
+            <button
+              onClick={() => scrollToSection('community')}
+              className="text-white hover:text-amber-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
+            >
+              Community
             </button>
             <button
               onClick={() => {
-                window.open(`https://dexscreener.com/bsc/${SITE_CONFIG.contractAddress}`, '_blank', 'noopener,noreferrer')
+                window.open(SITE_CONFIG.links.telegram, '_blank', 'noopener,noreferrer')
               }}
-              className="text-white hover:text-red-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
+              className="px-4 py-2 rounded-xl font-bold text-sm lg:text-base text-slate-900 bg-amber-300 shadow-lg hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all duration-200"
             >
-              CHART
-            </button>
-            <button
-              onClick={() => {
-                window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
-              }}
-              className="text-white hover:text-red-200 transition-colors px-2 sm:px-4 py-2 font-bold text-sm lg:text-base"
-            >
-              X COMMUNITY
+              Buy $FIREHORSE
             </button>
           </div>
 
@@ -63,7 +75,7 @@ export function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-red-200 transition-colors"
+              className="text-white hover:text-amber-200 transition-colors"
               aria-label="Toggle menu"
             >
               <svg
@@ -94,33 +106,51 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-2 bg-red-900/95 rounded-lg mt-2 p-4">
+          <div className="md:hidden pb-4 space-y-2 bg-slate-900/95 rounded-lg mt-2 p-4 border border-amber-300/40">
             <button
               onClick={() => {
-                window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
+                scrollToSection('about')
                 setIsOpen(false)
               }}
-              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50 font-bold"
+              className="block w-full text-left px-4 py-3 text-white hover:text-amber-200 transition-colors rounded-lg hover:bg-white/5 font-bold"
             >
-              TWITTER
+              About
             </button>
             <button
               onClick={() => {
-                window.open(`https://dexscreener.com/bsc/${SITE_CONFIG.contractAddress}`, '_blank', 'noopener,noreferrer')
+                scrollToSection('tokenomics')
                 setIsOpen(false)
               }}
-              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50 font-bold"
+              className="block w-full text-left px-4 py-3 text-white hover:text-amber-200 transition-colors rounded-lg hover:bg-white/5 font-bold"
             >
-              CHART
+              Tokenomics
             </button>
             <button
               onClick={() => {
-                window.open(SITE_CONFIG.links.twitter, '_blank', 'noopener,noreferrer')
+                scrollToSection('howtobuy')
                 setIsOpen(false)
               }}
-              className="block w-full text-left px-4 py-3 text-white hover:text-red-200 transition-colors rounded-lg hover:bg-red-700/50 font-bold"
+              className="block w-full text-left px-4 py-3 text-white hover:text-amber-200 transition-colors rounded-lg hover:bg-white/5 font-bold"
             >
-              X COMMUNITY
+              How to buy
+            </button>
+            <button
+              onClick={() => {
+                scrollToSection('community')
+                setIsOpen(false)
+              }}
+              className="block w-full text-left px-4 py-3 text-white hover:text-amber-200 transition-colors rounded-lg hover:bg-white/5 font-bold"
+            >
+              Community
+            </button>
+            <button
+              onClick={() => {
+                window.open(SITE_CONFIG.links.telegram, '_blank', 'noopener,noreferrer')
+                setIsOpen(false)
+              }}
+              className="block w-full text-left px-4 py-3 text-slate-900 bg-amber-300 rounded-lg font-bold hover:brightness-110 transition-all"
+            >
+              Buy $FIREHORSE
             </button>
           </div>
         )}
@@ -128,4 +158,3 @@ export function Navbar() {
     </nav>
   )
 }
-

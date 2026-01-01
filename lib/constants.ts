@@ -5,8 +5,8 @@ export const SITE_CONFIG = {
   ogImage: '/og-image.png',
   contractAddress: '0x704a78f1cee689f52aa691d966d38d4be01942a9',
   links: {
-    telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL || '#',
-    twitter: process.env.NEXT_PUBLIC_TWITTER_URL || '#',
+    telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/FireHorseOfficial',
+    twitter: process.env.NEXT_PUBLIC_TWITTER_URL || 'https://x.com/BscFirehorse',
   },
 } as const
 

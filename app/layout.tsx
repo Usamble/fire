@@ -1,18 +1,18 @@
 import '../styles/globals.css'
-import { ZCOOL_XiaoWei, Noto_Serif_SC } from 'next/font/google'
+import { Bungee, Manrope } from 'next/font/google'
 
-const zcoolXiaoWei = ZCOOL_XiaoWei({
+const bungee = Bungee({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-zcool-xiaowei',
+  variable: '--font-bungee'
 })
 
-const notoSerifSC = Noto_Serif_SC({
-  weight: ['400', '700', '900'],
+const manrope = Manrope({
+  weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-noto-serif-sc',
+  variable: '--font-manrope'
 })
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${zcoolXiaoWei.variable} ${notoSerifSC.variable}`}>
+    <html lang="en" className={`${bungee.variable} ${manrope.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
         <meta name="theme-color" content="#991b1b" />
@@ -33,4 +33,3 @@ export default function RootLayout({
     </html>
   )
 }
-

@@ -21,7 +21,7 @@ const storySections: StorySection[] = [
 This **RARE** and **POWERFUL** combination occurs only once every six decades. It brings transformation, opportunity, and **UNSTOPPABLE MOMENTUM!** ⚡
 
 Last FireHorse: **1966** | Before that: **1906** | Next: **2026** 🚀`,
-    image: '/horse.png',
+    image: '/cartoon-standing.png',
     imagePosition: 'right'
   },
   {
@@ -40,7 +40,7 @@ THE NEXT CHAPTER! Be part of history! 🚀 TO THE MOON! 🌙
 
 ⏰ **Next FireHorse: 2086**
 Don&apos;t miss this rare 60-year opportunity!`,
-    image: '/horse.png',
+    image: '/cartoon-standing.png',
     imagePosition: 'left'
   },
   {
@@ -56,7 +56,7 @@ Symbolizes **FREEDOM, SPEED**, and unstoppable forward motion! The Horse **NEVER
 
 🔥 **FIRE + HORSE = UNSTOPPABLE FORCE** 🔥
 Transformation • Innovation • Greatness Against All Odds`,
-    image: '/horse.png',
+    image: '/cartoon-standing.png',
     imagePosition: 'center'
   },
   {
@@ -68,7 +68,7 @@ Transformation • Innovation • Greatness Against All Odds`,
 This is a **COMMUNITY PROJECT** celebrating the **60-YEAR CYCLE** tradition! Join us in commemorating this **RARE ASTRONOMICAL EVENT**! ✨
 
 ⚠️ **DISCLAIMER:** This is **NOT** financial advice. Always do your own research (DYOR) and never invest more than you can afford to lose! ⚠️`,
-    image: '/horse.png',
+    image: '/cartoon-standing.png',
     imagePosition: 'right'
   },
   {
@@ -77,7 +77,7 @@ This is a **COMMUNITY PROJECT** celebrating the **60-YEAR CYCLE** tradition! Joi
     text: `Be part of the 60-year cycle tradition!
 
 Connect with the community. Ride the wave! 🌊`,
-    image: '/horse.png',
+    image: '/cartoon-standing.png',
     imagePosition: 'left'
   }
 ]
@@ -231,7 +231,7 @@ export function ScrollStory() {
             {/* Fire background overlay */}
             <div className="absolute inset-0 overflow-hidden opacity-20">
               <Image
-                src={`/${(index % 6) + 1}.jpg`}
+                src={`/cartoon-${(index % 6) + 1}.jpg`}
                 alt="Fire Horse Background"
                 fill
                 className="object-cover"
@@ -266,7 +266,7 @@ export function ScrollStory() {
                   <div className={`flex justify-center ${section.imagePosition === 'right' ? 'lg:order-2' : ''}`}>
                     <div className="relative">
                       <Image
-                        src={`/${(index % 6) + 1}.jpg`}
+                        src={`/cartoon-${(index % 6) + 1}.jpg`}
                         alt="FireHorse"
                         width={500}
                         height={500}

@@ -27,7 +27,7 @@ export function SectionLore() {
       {/* Fire horse background */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <Image
-          src="/4.jpg"
+          src="/cartoon-4.jpg"
           alt="Fire Horse Background"
           fill
           className="object-cover"
@@ -56,7 +56,7 @@ export function SectionLore() {
       {/* Red stylized horse in background */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none hidden md:block">
         <Image
-          src="/5.jpg"
+          src="/cartoon-5.jpg"
           alt="FireHorse"
           width={400}
           height={400}

@@ -46,7 +46,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="h-screen flex flex-col items-center justify-center px-3 sm:px-6 lg:px-8 pt-0 pb-0 relative overflow-hidden"
+      className="h-screen flex flex-col items-center justify-center px-0 sm:px-6 lg:px-8 pt-0 pb-0 relative overflow-hidden"
       style={{
         background:
           'linear-gradient(135deg, #7f1d1d 0%, #b91c1c 45%, #ef4444 80%)'
@@ -98,13 +98,13 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 py-0 px-0 sm:px-3 lg:px-6">
+      <div className="w-full relative z-10 py-0">
         <div className="flex flex-col items-center gap-2 sm:gap-3 text-center">
           <AnimateOnScroll direction="up" delay={100}>
             <div className="relative flex justify-center w-full">
               <div className="absolute -left-8 -top-8 w-48 h-48 bg-amber-200/30 blur-3xl hidden sm:block" />
               <div className="absolute -right-8 bottom-0 w-56 h-56 bg-rose-300/25 blur-3xl hidden sm:block" />
-              <div className="relative w-full max-w-[100vw] sm:max-w-[900px] lg:max-w-[1000px] -mx-3 sm:mx-0">
+              <div className="relative w-full sm:max-w-[900px] lg:max-w-[1000px]">
                 <Image
                   src="/cartoon-standing.png"
                   alt="Hero FireHorse"
@@ -113,7 +113,7 @@ export function Hero() {
                   className="object-contain drop-shadow-[0_0_65px_rgba(255,214,102,0.65)] w-full h-auto"
                   priority
                   quality={90}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 700px, 1000px"
+                  sizes="100vw"
                 />
                 {/* Text overlay na spodnej časti obrázka */}
                 <div className="absolute bottom-8 sm:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center">

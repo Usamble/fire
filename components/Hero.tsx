@@ -118,7 +118,7 @@ export function Hero() {
                 {/* Text overlay na spodnej časti obrázka */}
                 <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center">
                   <h1
-                    className="font-headline text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white"
+                    className="font-headline text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-tight text-white"
                     style={{ 
                       textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)',
                       WebkitTextStroke: '1px rgba(0,0,0,0.3)'

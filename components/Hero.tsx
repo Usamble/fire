@@ -104,7 +104,7 @@ export function Hero() {
             <div className="relative flex justify-center">
               <div className="absolute -left-8 -top-8 w-48 h-48 bg-amber-200/30 blur-3xl" />
               <div className="absolute -right-8 bottom-0 w-56 h-56 bg-rose-300/25 blur-3xl" />
-              <div className="relative w-full max-w-[800px] sm:max-w-[900px] lg:max-w-[1000px]">
+              <div className="relative w-full max-w-[95vw] sm:max-w-[900px] lg:max-w-[1000px]">
                 <Image
                   src="/cartoon-standing.png"
                   alt="Hero FireHorse"
@@ -113,12 +113,12 @@ export function Hero() {
                   className="object-contain drop-shadow-[0_0_65px_rgba(255,214,102,0.65)] w-full h-auto"
                   priority
                   quality={90}
-                  sizes="(max-width: 640px) 400px, (max-width: 1024px) 700px, 1000px"
+                  sizes="(max-width: 640px) 95vw, (max-width: 1024px) 700px, 1000px"
                 />
                 {/* Text overlay na spodnej časti obrázka */}
                 <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center">
                   <h1
-                    className="font-headline text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-tight text-white"
+                    className="font-headline text-6xl sm:text-7xl lg:text-8xl xl:text-9xl leading-tight text-white"
                     style={{ 
                       textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)',
                       WebkitTextStroke: '1px rgba(0,0,0,0.3)'

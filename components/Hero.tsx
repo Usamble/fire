@@ -98,13 +98,13 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 py-0">
+      <div className="max-w-7xl mx-auto relative z-10 py-0 px-0 sm:px-3 lg:px-6">
         <div className="flex flex-col items-center gap-2 sm:gap-3 text-center">
           <AnimateOnScroll direction="up" delay={100}>
-            <div className="relative flex justify-center">
-              <div className="absolute -left-8 -top-8 w-48 h-48 bg-amber-200/30 blur-3xl" />
-              <div className="absolute -right-8 bottom-0 w-56 h-56 bg-rose-300/25 blur-3xl" />
-              <div className="relative w-full max-w-[100vw] sm:max-w-[900px] lg:max-w-[1000px]">
+            <div className="relative flex justify-center w-full">
+              <div className="absolute -left-8 -top-8 w-48 h-48 bg-amber-200/30 blur-3xl hidden sm:block" />
+              <div className="absolute -right-8 bottom-0 w-56 h-56 bg-rose-300/25 blur-3xl hidden sm:block" />
+              <div className="relative w-full max-w-[100vw] sm:max-w-[900px] lg:max-w-[1000px] -mx-3 sm:mx-0">
                 <Image
                   src="/cartoon-standing.png"
                   alt="Hero FireHorse"

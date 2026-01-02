@@ -23,8 +23,7 @@ export function ContractAddress() {
   }
 
   const getDexScreenerUrl = (address: string) => {
-    if (!address.startsWith('0x')) return '#'
-    return `https://dexscreener.com/bsc/${address}:4meme`
+    return 'https://dexscreener.com/bsc/0x2888025faa7172285607fbb0993fba1edfdce58d'
   }
 
   return (

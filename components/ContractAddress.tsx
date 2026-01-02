@@ -23,11 +23,8 @@ export function ContractAddress() {
   }
 
   const getDexScreenerUrl = (address: string) => {
-    // DexScreener URL for BSC (Binance Smart Chain)
-    if (address.startsWith('0x')) {
-      return `https://dexscreener.com/bsc/${address}`
-    }
-    return `#`
+    if (!address.startsWith('0x')) return '#'
+    return `https://dexscreener.com/bsc/${address}:4meme`
   }
 
   return (
@@ -92,4 +89,3 @@ export function ContractAddress() {
     </div>
   )
 }
-

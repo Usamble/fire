@@ -129,7 +129,7 @@ export function SectionHowToBuy() {
                   <div className="flex-1 text-center sm:text-left">
                     <h3 className="text-base sm:text-lg lg:text-2xl font-black mb-1 sm:mb-2 text-center sm:text-left" style={{ color: '#8B0000' }}>SWAP $BNB FOR $FIREHORSE</h3>
                     <p className="text-xs sm:text-sm lg:text-base leading-relaxed" style={{ color: '#3C2414' }}>
-                      Use PancakeSwap to swap $BNB for $FIREHORSE on BSC. Contract: <strong className="font-mono text-xs sm:text-sm" style={{ color: '#8B0000' }}>{SITE_CONFIG.contractAddress.slice(0, 6)}...{SITE_CONFIG.contractAddress.slice(-4)}</strong>
+                      Use PancakeSwap to swap $BNB for $FIREHORSE on BSC.
                     </p>
                   </div>
                 </div>

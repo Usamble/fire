@@ -24,7 +24,7 @@ export function SectionCommunity() {
   }
 
   const handleChartClick = () => {
-    window.open(`https://dexscreener.com/bsc/${SITE_CONFIG.contractAddress}`, '_blank', 'noopener,noreferrer')
+    window.open(`https://dexscreener.com/bsc/${SITE_CONFIG.contractAddress}:4meme`, '_blank', 'noopener,noreferrer')
   }
 
   return (

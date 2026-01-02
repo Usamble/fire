@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { Bungee, Manrope } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 
 const bungee = Bungee({
   weight: '400',
@@ -29,6 +30,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   )

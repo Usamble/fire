@@ -268,11 +268,12 @@ export function ScrollStory() {
                       <Image
                         src={`/cartoon-${(index % 6) + 1}.jpg`}
                         alt="FireHorse"
-                        width={500}
-                        height={500}
+                        width={950}
+                        height={950}
                         className={`object-contain transition-all duration-1000 ${
-                          isActive ? 'scale-110 opacity-100 brightness-110' : 'scale-95 opacity-50 brightness-75'
+                          isActive ? 'scale-120 opacity-100 brightness-110' : 'scale-95 opacity-50 brightness-75'
                         }`}
+                        sizes="(max-width: 640px) 95vw, (max-width: 1024px) 80vw, 950px"
                         style={{ 
                           filter: isActive 
                             ? 'drop-shadow(0 0 50px rgba(255, 107, 53, 0.8)) drop-shadow(0 0 80px rgba(255, 215, 0, 0.6))'

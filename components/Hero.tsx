@@ -23,8 +23,24 @@ const generateEmberPositions = (count: number) => {
 // Generate fewer embers - will be filtered on mobile in component
 const heroEmberPositions = generateEmberPositions(30)
 
+// Next Chinese New Year (adjust when needed)
+const CNY_TARGET = new Date('2026-02-17T00:00:00+08:00').getTime()
+
+const computeCountdown = () => {
+  const diff = Math.max(0, CNY_TARGET - Date.now())
+  const totalSeconds = Math.floor(diff / 1000)
+  const days = Math.floor(totalSeconds / 86400)
+  const hours = Math.floor((totalSeconds % 86400) / 3600)
+  const minutes = Math.floor((totalSeconds % 3600) / 60)
+  const seconds = totalSeconds % 60
+  return { days, hours, minutes, seconds }
+}
+
+const pad = (n: number) => n.toString().padStart(2, '0')
+
 export function Hero() {
   const [isMobile, setIsMobile] = useState(false)
+  const [countdown, setCountdown] = useState(computeCountdown())
 
   useEffect(() => {
     const checkMobile = () => {
@@ -33,6 +49,13 @@ export function Hero() {
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCountdown(computeCountdown())
+    }, 1000)
+    return () => clearInterval(interval)
   }, [])
 
   const handleTelegramClick = () => {
@@ -98,22 +121,36 @@ export function Hero() {
         ))}
       </div>
 
+      {/* Large countdown backdrop (subtle center) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div
+          className="text-white/10 text-6xl sm:text-8xl lg:text-[10rem] font-black tracking-tight text-center"
+          style={{
+            textShadow:
+              '0 0 30px rgba(255, 215, 0, 0.2), 0 0 60px rgba(255, 140, 0, 0.18), 0 0 12px rgba(0, 0, 0, 0.35)',
+            WebkitTextStroke: '1px rgba(255,255,255,0.08)'
+          }}
+        >
+          {countdown.days}D {pad(countdown.hours)}:{pad(countdown.minutes)}:{pad(countdown.seconds)}
+        </div>
+      </div>
+
       <div className="w-full relative z-10 py-0">
         <div className="flex flex-col items-center gap-2 sm:gap-3 text-center">
           <AnimateOnScroll direction="up" delay={100}>
             <div className="relative flex justify-center w-full">
               <div className="absolute -left-8 -top-8 w-48 h-48 bg-amber-200/30 blur-3xl hidden sm:block" />
               <div className="absolute -right-8 bottom-0 w-56 h-56 bg-rose-300/25 blur-3xl hidden sm:block" />
-              <div className="relative w-full sm:max-w-[900px] lg:max-w-[1000px]">
+              <div className="relative w-full max-w-[98vw] sm:max-w-[1600px] lg:max-w-[1800px]">
                 <Image
                   src="/cartoon-standing.png"
                   alt="Hero FireHorse"
-                  width={1600}
-                  height={1600}
+                  width={3600}
+                  height={3600}
                   className="object-contain drop-shadow-[0_0_65px_rgba(255,214,102,0.65)] w-full h-auto"
                   priority
                   quality={90}
-                  sizes="100vw"
+                  sizes="(max-width: 640px) 98vw, (max-width: 1024px) 95vw, 1800px"
                 />
                 {/* Text overlay na spodnej časti obrázka */}
                 <div className="absolute bottom-8 sm:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center">

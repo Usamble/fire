@@ -124,11 +124,11 @@ export function Hero() {
       {/* Large countdown backdrop (subtle center) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
-          className="text-white/10 text-6xl sm:text-8xl lg:text-[10rem] font-black tracking-tight text-center"
+          className="text-white/10 text-5xl sm:text-7xl lg:text-[8rem] font-black tracking-tight text-center"
           style={{
             textShadow:
-              '0 0 30px rgba(255, 215, 0, 0.2), 0 0 60px rgba(255, 140, 0, 0.18), 0 0 12px rgba(0, 0, 0, 0.35)',
-            WebkitTextStroke: '1px rgba(255,255,255,0.08)'
+              '0 0 18px rgba(255, 215, 0, 0.12), 0 0 28px rgba(255, 140, 0, 0.1), 0 0 8px rgba(0, 0, 0, 0.25)',
+            WebkitTextStroke: '0.5px rgba(255,255,255,0.05)'
           }}
         >
           {countdown.days}D {pad(countdown.hours)}:{pad(countdown.minutes)}:{pad(countdown.seconds)}
@@ -141,7 +141,7 @@ export function Hero() {
             <div className="relative flex justify-center w-full">
               <div className="absolute -left-8 -top-8 w-48 h-48 bg-amber-200/30 blur-3xl hidden sm:block" />
               <div className="absolute -right-8 bottom-0 w-56 h-56 bg-rose-300/25 blur-3xl hidden sm:block" />
-              <div className="relative w-full max-w-[98vw] sm:max-w-[1600px] lg:max-w-[1800px]">
+              <div className="relative w-full max-w-[900px] sm:max-w-[1000px] lg:max-w-[1100px] mx-auto">
                 <Image
                   src="/cartoon-standing.png"
                   alt="Hero FireHorse"
@@ -152,8 +152,11 @@ export function Hero() {
                   quality={90}
                   sizes="(max-width: 640px) 98vw, (max-width: 1024px) 95vw, 1800px"
                 />
-                {/* Text overlay na spodnej časti obrázka */}
-                <div className="absolute bottom-8 sm:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center">
+                {/* Text overlay ako overlay v dolnej polovici obrázka */}
+                <div
+                  className="absolute left-0 right-0 flex justify-center"
+                  style={{ bottom: '12%' }}
+                >
                   <h1
                     className="font-headline text-3xl sm:text-7xl lg:text-8xl xl:text-9xl leading-tight text-white"
                     style={{ 

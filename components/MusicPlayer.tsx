@@ -63,7 +63,7 @@ export function MusicPlayer() {
         document.removeEventListener(evt, handleInteraction)
       })
     }
-  }, [])
+  }, [start])
 
   return (
     <>

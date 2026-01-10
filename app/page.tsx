@@ -7,14 +7,13 @@ import { SectionCommunity } from '@/components/SectionCommunity'
 import { Footer } from '@/components/Footer'
 import { MusicPlayer } from '@/components/MusicPlayer'
 import { SectionImageLab } from '@/components/SectionImageLab'
-import { SectionAnnouncement } from '@/components/SectionAnnouncement'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <SectionAnnouncement />
+      {/* Announcement section hidden for now */}
       <SectionAbout />
       <SectionImageLab />
       <SectionTokenomics />
